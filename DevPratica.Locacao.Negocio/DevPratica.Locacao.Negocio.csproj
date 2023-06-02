@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DevPratica.Locacao.Infra\DevPratica.Locacao.Infra.csproj" />
+    <ProjectReference Include="..\DevPratica.Locacao.Modelo\DevPratica.Locacao.Modelo.csproj" />
+  </ItemGroup>
+
+</Project>
