@@ -1,9 +1,7 @@
 ﻿using DevPratica.Locacao.Modelo;
 using DevPratica.Locacao.Negocio.ClienteNegocio;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Infrastructure;
 
 namespace DevPratica.Locacao.API.Controllers
 {
@@ -13,7 +11,6 @@ namespace DevPratica.Locacao.API.Controllers
     public class ClienteController : ControllerBase
     {
         private readonly IClienteNegocio _clienteNegocio;
-
         public ClienteController(IClienteNegocio clienteNegocio)
         {
             _clienteNegocio = clienteNegocio;

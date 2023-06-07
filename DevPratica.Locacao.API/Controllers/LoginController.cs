@@ -1,7 +1,6 @@
 ﻿using DevPratica.Locacao.Modelo.DTO;
 using DevPratica.Locacao.Negocio.LoginNegocio;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DevPratica.Locacao.API.Controllers

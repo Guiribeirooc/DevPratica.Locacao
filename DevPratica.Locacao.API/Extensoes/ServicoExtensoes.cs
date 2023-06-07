@@ -1,14 +1,13 @@
 ﻿using DevPratica.Locacao.Infra.Entity;
 using DevPratica.Locacao.Negocio.ClienteNegocio;
+using DevPratica.Locacao.Negocio.EquipamentoNegocio;
 using DevPratica.Locacao.Negocio.FornecedorNegocio;
 using DevPratica.Locacao.Negocio.GeradorTokenNegocio;
 using DevPratica.Locacao.Negocio.LoginNegocio;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Internal;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
-using System.Reflection;
 using System.Security.Cryptography;
 
 namespace DevPratica.Locacao.API.Extensoes
@@ -22,6 +21,8 @@ namespace DevPratica.Locacao.API.Extensoes
             services.AddScoped<IClienteNegocio, ClienteNegocio>();
 
             services.AddScoped<IFornecedorNegocio, FornecedorNegocio>();
+
+            services.AddScoped<IEquipamentoNegocio, EquipamentoNegocio>();
 
             services.AddScoped<ILoginNegocio, LoginNegocio>();
 
