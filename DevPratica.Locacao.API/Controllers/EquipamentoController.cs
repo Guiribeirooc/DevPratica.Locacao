@@ -32,7 +32,7 @@ namespace DevPratica.Locacao.API.Controllers
         }
 
         [HttpGet("ObterPorDescrição")]
-        public async Task<Equipamento> ObterPorId([FromQuery] string descricao)
+        public async Task<Equipamento> ObterPorDescricao([FromQuery] string descricao)
         {
             return await _equipamentoNegocio.ObterPorDescricao(descricao);
         }

@@ -26,5 +26,10 @@ namespace DevPratica.Locacao.Negocio.EquipamentoNegocio
         {
             return await _appDbContext.Equipamentos.SingleAsync(x => x.Descricao == descricao);
         }
+
+        public async Task<Equipamento> ObterPorId(int id)
+        {
+            return await _appDbContext.Equipamentos.SingleAsync(x => x.Id == id);
+        }
     }
 }
