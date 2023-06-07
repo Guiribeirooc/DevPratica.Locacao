@@ -36,5 +36,11 @@ namespace DevPratica.Locacao.API.Controllers
         {
             return await _equipamentoNegocio.ObterPorDescricao(descricao);
         }
+
+        [HttpGet("ObterPorId")]
+        public async Task<Equipamento> ObterPorId([FromQuery] int id)
+        {
+            return await _equipamentoNegocio.ObterPorId(id);
+        }
     }
 }
