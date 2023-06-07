@@ -11,18 +11,15 @@ namespace DevPratica.Locacao.Negocio.FornecedorNegocio
         {
             _appDbContext = appDbContext;
         }
-
         public async Task Incluir(Fornecedor fornecedor)
         {
             await _appDbContext.Fornecedores.AddAsync(fornecedor);
             await _appDbContext.SaveChangesAsync();
         }
-
         public async Task<List<Fornecedor>> ObterLista()
         {
             return await _appDbContext.Fornecedores.ToListAsync();
         }
-
         public async Task<Fornecedor> ObterPorCNPJ(string cnpj)
         {
             return await _appDbContext.Fornecedores.SingleAsync(x => x.CNPJ == cnpj);

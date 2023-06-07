@@ -6,12 +6,10 @@ namespace DevPratica.Locacao.Negocio.LoginNegocio
     public class LoginNegocio : ILoginNegocio
     {
         private readonly IGeradorTokenNegocio _geradorTokenNegocio;
-
         public LoginNegocio(IGeradorTokenNegocio geradorTokenNegocio)
         {
             _geradorTokenNegocio = geradorTokenNegocio;
         }
-
         public async Task<LoginResposta> Login(LoginRequisicao loginRequisicao)
         {
             LoginResposta loginResposta = new LoginResposta();

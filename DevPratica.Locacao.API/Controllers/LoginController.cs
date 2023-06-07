@@ -10,7 +10,6 @@ namespace DevPratica.Locacao.API.Controllers
     public class LoginController : ControllerBase
     {
         private readonly ILoginNegocio _loginNegocio;
-
         public LoginController(ILoginNegocio loginNegocio)
         {
             _loginNegocio = loginNegocio;

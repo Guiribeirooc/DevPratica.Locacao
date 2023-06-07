@@ -11,7 +11,6 @@ namespace DevPratica.Locacao.API.Controllers
     public class FornecedorController : ControllerBase
     {
         private readonly IFornecedorNegocio _fornecedorNegocio;
-
         public FornecedorController(IFornecedorNegocio fornecedorNegocio)
         {
             _fornecedorNegocio = fornecedorNegocio;

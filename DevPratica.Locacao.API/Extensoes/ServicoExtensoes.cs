@@ -17,15 +17,10 @@ namespace DevPratica.Locacao.API.Extensoes
         public static void ConfigurarServicos(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddDbContext<AppDbContext>(opt => opt.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
-
             services.AddScoped<IClienteNegocio, ClienteNegocio>();
-
             services.AddScoped<IFornecedorNegocio, FornecedorNegocio>();
-
             services.AddScoped<IEquipamentoNegocio, EquipamentoNegocio>();
-
             services.AddScoped<ILoginNegocio, LoginNegocio>();
-
             services.AddTransient<IGeradorTokenNegocio, GeradorTokenNegocio>();
         }
 
@@ -84,7 +79,6 @@ namespace DevPratica.Locacao.API.Extensoes
                         IssuerSigningKey = new SymmetricSecurityKey(
                             Convert.FromBase64String(Environment.GetEnvironmentVariable("JWT_SECRETO")))
                     };
-
                 });
         }
     }

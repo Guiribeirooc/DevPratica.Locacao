@@ -16,12 +16,10 @@ namespace DevPratica.Locacao.Negocio.ClienteNegocio
             await _appDbContext.Clientes.AddAsync(cliente);
             await _appDbContext.SaveChangesAsync();
         }
-
         public async Task<List<Cliente>> ObterLista()
         {
             return await _appDbContext.Clientes.ToListAsync();
         }
-
         public async Task<Cliente> ObterPorCPF(string cpf)
         {
             return await _appDbContext.Clientes.SingleAsync(x => x.CPF == cpf);

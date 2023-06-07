@@ -5,7 +5,6 @@ namespace DevPratica.Locacao.Modelo
 {
     public class Cliente : Endereco
     {
-
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Required(ErrorMessage = "O CPF é obrigatório.")]
@@ -28,9 +27,7 @@ namespace DevPratica.Locacao.Modelo
 
         [Required(ErrorMessage = "A Data de Nascimento é obrigatório.")]
         public DateTime DataNascimento { get; set; }
-
         public DateTime DataInclusao { get; set; }
-
         public DateTime? DataAlteracao { get; set; }
     }
 }

@@ -16,17 +16,14 @@ namespace DevPratica.Locacao.Negocio.EquipamentoNegocio
             await _appDbContext.Equipamentos.AddAsync(equipamento);
             await _appDbContext.SaveChangesAsync();
         }
-
         public async Task<List<Equipamento>> ObterLista()
         {
             return await _appDbContext.Equipamentos.ToListAsync();
         }
-
         public async Task<Equipamento> ObterPorDescricao(string descricao)
         {
             return await _appDbContext.Equipamentos.SingleAsync(x => x.Descricao == descricao);
         }
-
         public async Task<Equipamento> ObterPorId(int id)
         {
             return await _appDbContext.Equipamentos.SingleAsync(x => x.Id == id);

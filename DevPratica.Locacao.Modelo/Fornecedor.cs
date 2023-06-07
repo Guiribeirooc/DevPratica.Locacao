@@ -21,9 +21,7 @@ namespace DevPratica.Locacao.Modelo
 
         [StringLength(150, ErrorMessage = "Este campo deve ter no máximo 150 Caracteres.")]
         public string? Email { get; set; } = "";
-
         public DateTime DataInclusao { get; set; }
-
         public DateTime? DataAlteracao { get; set; }
     }
 }

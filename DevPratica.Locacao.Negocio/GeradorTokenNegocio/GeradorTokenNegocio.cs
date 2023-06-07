@@ -8,13 +8,10 @@ namespace DevPratica.Locacao.Negocio.GeradorTokenNegocio
     public class GeradorTokenNegocio : IGeradorTokenNegocio
     {
         private readonly string _secreto;
-
         public GeradorTokenNegocio()
         {
             _secreto = Environment.GetEnvironmentVariable("JWT_SECRETO");
         }
-
-
         public async Task<LoginResposta> GerarToken(LoginResposta loginResposta)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
@@ -46,7 +43,5 @@ namespace DevPratica.Locacao.Negocio.GeradorTokenNegocio
 
             return loginResposta;
         }
-        
-        
     }
 }
