@@ -11,8 +11,20 @@ namespace DevPratica.Locacao.Negocio.FornecedorNegocio
         {
             _appDbContext = appDbContext;
         }
+
+        public async  Task Alterar(Fornecedor fornecedor)
+        {
+            fornecedor.DataAlteracao = DateTime.Now;
+
+            _appDbContext.Fornecedores.Update(fornecedor);
+            await _appDbContext.SaveChangesAsync();
+        }
+
         public async Task Incluir(Fornecedor fornecedor)
         {
+            fornecedor.DataInclusao = DateTime.Now;
+            fornecedor.DataAlteracao = null;
+
             await _appDbContext.Fornecedores.AddAsync(fornecedor);
             await _appDbContext.SaveChangesAsync();
         }

@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevPratica.Locacao", "DevPratica.Locacao\DevPratica.Locacao.csproj", "{3AAB9DAD-186B-425A-B566-593905E08E9B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DevPratica.Locacao", "DevPratica.Locacao\DevPratica.Locacao.csproj", "{3AAB9DAD-186B-425A-B566-593905E08E9B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevPratica.Locacao.API", "DevPratica.Locacao.API\DevPratica.Locacao.API.csproj", "{32EDC0FC-3A53-42D0-8759-E8E277009C6D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DevPratica.Locacao.API", "DevPratica.Locacao.API\DevPratica.Locacao.API.csproj", "{32EDC0FC-3A53-42D0-8759-E8E277009C6D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevPratica.Locacao.Negocio", "DevPratica.Locacao.Negocio\DevPratica.Locacao.Negocio.csproj", "{F2AE8C88-00B0-4C2D-8CBE-83A30E2CD5BD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DevPratica.Locacao.Negocio", "DevPratica.Locacao.Negocio\DevPratica.Locacao.Negocio.csproj", "{F2AE8C88-00B0-4C2D-8CBE-83A30E2CD5BD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevPratica.Locacao.Modelo", "DevPratica.Locacao.Modelo\DevPratica.Locacao.Modelo.csproj", "{A358D565-7ED8-45C9-903F-53DC5121322C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DevPratica.Locacao.Modelo", "DevPratica.Locacao.Modelo\DevPratica.Locacao.Modelo.csproj", "{A358D565-7ED8-45C9-903F-53DC5121322C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevPratica.Locacao.Infra", "DevPratica.Locacao.Infra\DevPratica.Locacao.Infra.csproj", "{A4AD66BB-0110-46B2-AFE0-B803CDC4E4F8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DevPratica.Locacao.Infra", "DevPratica.Locacao.Infra\DevPratica.Locacao.Infra.csproj", "{A4AD66BB-0110-46B2-AFE0-B803CDC4E4F8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

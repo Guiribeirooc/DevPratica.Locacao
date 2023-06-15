@@ -1,0 +1,55 @@
+﻿@model DevPratica.Locacao.Modelo.Equipamento
+
+<div class="row">
+    <div class="col-md-12">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="row mb-3">
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label asp-for="Id" class="control-label"></label>
+                    <input asp-for="Id" class="form-control" />
+                    <span asp-validation-for="Id" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-10">
+                <div class="form-group">
+                    <label asp-for="Descricao" class="control-label"></label>
+                    <input asp-for="Descricao" class="form-control" />
+                    <span asp-validation-for="Descricao" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label asp-for="Detalhes" class="control-label"></label>
+                    <input asp-for="Detalhes" class="form-control" />
+                    <span asp-validation-for="Detalhes" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label asp-for="Valor" class="control-label"></label>
+                    <input asp-for="Valor" class="form-control moedaReal" />
+                    <span asp-validation-for="Valor" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <button asp-action="Index" title="Ir para lista" class="btn btn-outline-primary float-right">< Voltar para Lista</button>
+            </div>
+            <div class="col-md-6 text-end">
+                <button type="submit" class="btn btn-primary float-right">Confirmar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }

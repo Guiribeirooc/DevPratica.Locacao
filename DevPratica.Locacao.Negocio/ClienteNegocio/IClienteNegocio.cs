@@ -7,5 +7,6 @@ namespace DevPratica.Locacao.Negocio.ClienteNegocio
         Task Incluir(Cliente cliente);
         Task<Cliente> ObterPorCPF(string cpf);
         Task<List<Cliente>> ObterLista();
+        Task Alterar(Cliente cliente);
     }
 }

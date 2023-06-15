@@ -42,5 +42,12 @@ namespace DevPratica.Locacao.API.Controllers
         {
             return await _equipamentoNegocio.ObterPorId(id);
         }
+
+        [HttpPut]
+        public async Task Put([FromBody] Equipamento equipamento)
+        {
+            if (!ModelState.IsValid)
+                await _equipamentoNegocio.Alterar(equipamento);
+        }
     }
 }

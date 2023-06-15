@@ -1,0 +1,10 @@
+{
+  "version": "1.0",
+  "defaultProvider": "unpkg",
+  "libraries": [
+    {
+      "library": "inputmask@5.0.8",
+      "destination": "wwwroot/lib/inputmask/"
+    }
+  ]
+}

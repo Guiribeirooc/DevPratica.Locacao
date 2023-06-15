@@ -37,5 +37,11 @@ namespace DevPratica.Locacao.API.Controllers
             return await _clienteNegocio.ObterPorCPF(cpf);
         }
 
+        [HttpPut]
+        public async Task Put([FromBody] Cliente cliente)
+        {
+            if (!ModelState.IsValid)
+                await _clienteNegocio.Alterar(cliente);      
+        }
     }
 }

@@ -11,8 +11,20 @@ namespace DevPratica.Locacao.Negocio.EquipamentoNegocio
         {
             _appDbContext = appDbContext;
         }
+
+        public async Task Alterar(Equipamento equipamento)
+        {
+            equipamento.DataAlteracao = DateTime.Now;
+
+            _appDbContext.Equipamentos.Update(equipamento);
+            await _appDbContext.SaveChangesAsync();
+        }
+
         public async Task Incluir(Equipamento equipamento)
         {
+            equipamento.DataInclusao = DateTime.Now;
+            equipamento.DataAlteracao = null;
+
             await _appDbContext.Equipamentos.AddAsync(equipamento);
             await _appDbContext.SaveChangesAsync();
         }

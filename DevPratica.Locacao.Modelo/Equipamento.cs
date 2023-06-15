@@ -5,6 +5,7 @@ namespace DevPratica.Locacao.Modelo
 {
     public class Equipamento
     {
+        [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 

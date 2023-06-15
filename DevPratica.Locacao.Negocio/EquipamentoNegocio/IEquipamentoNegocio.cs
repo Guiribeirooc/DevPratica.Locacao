@@ -8,5 +8,6 @@ namespace DevPratica.Locacao.Negocio.EquipamentoNegocio
         Task<Equipamento> ObterPorDescricao(string descricao);
         Task<List<Equipamento>> ObterLista();
         Task<Equipamento> ObterPorId(int id);
+        Task Alterar(Equipamento equipamento);
     }
 }
