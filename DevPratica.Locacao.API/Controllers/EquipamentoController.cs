@@ -46,7 +46,7 @@ namespace DevPratica.Locacao.API.Controllers
         [HttpPut]
         public async Task Put([FromBody] Equipamento equipamento)
         {
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
                 await _equipamentoNegocio.Alterar(equipamento);
         }
     }

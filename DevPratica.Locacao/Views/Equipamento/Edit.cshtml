@@ -1,0 +1,22 @@
+﻿@model DevPratica.Locacao.Modelo.Equipamento
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h4> Editar - Equipamento</h4>
+<hr />
+
+<form asp-action="Edit">
+    <input asp-for="DataInclusao" type="hidden" />
+    <input asp-for="DataAlteracao" type="hidden" />
+    <partial name="_Form" />
+</form>
+
+@section scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            document.getElementById("Id").readOnly = true;
+        });
+    </script>
+}

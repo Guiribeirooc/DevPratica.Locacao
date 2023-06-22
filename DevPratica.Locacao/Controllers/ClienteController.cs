@@ -58,13 +58,9 @@ namespace DevPratica.Locacao.Controllers
                     HttpResponseMessage response = await _httpClient.PostAsJsonAsync($"{_dadosBase.Value.API_URL_BASE}Cliente", cliente);
 
                     if (response.IsSuccessStatusCode)
-                    {
                         return RedirectToAction(nameof(Index));
-                    }
                     else
-                    {
                         throw new Exception(response.ReasonPhrase);
-                    }
                 }
                 else
                 {
@@ -77,21 +73,42 @@ namespace DevPratica.Locacao.Controllers
             }
         }
 
-        public ActionResult Edit(int id)
+        public async Task<ActionResult> Edit(string id)
         {
-            return View();
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", await _apiToken.Obter());
+            HttpResponseMessage response = await _httpClient.GetAsync($"{_dadosBase.Value.API_URL_BASE}Cliente/ObterPorCPF?cpf={id}");
+
+            if (response.IsSuccessStatusCode)
+                return View(JsonConvert.DeserializeObject<Cliente>(await response.Content.ReadAsStringAsync()));
+            else
+                throw new Exception(response.ReasonPhrase);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public async Task<IActionResult> Edit([FromForm] Cliente cliente)
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                if (ModelState.IsValid)
+                {
+                    _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", await _apiToken.Obter());
+                    HttpResponseMessage response = await _httpClient.PutAsJsonAsync($"{_dadosBase.Value.API_URL_BASE}Cliente", cliente);
+
+                    if (response.IsSuccessStatusCode)
+                        return RedirectToAction(nameof(Index), new { mensagem = "Registro Salvo!", sucesso = true });
+                    else
+                        throw new Exception(response.ReasonPhrase);
+                }
+                else
+                {
+                    TempData["error"] = "Algum campo está faltando ser preenchido";
+                    return View();
+                }
             }
-            catch
+            catch (Exception ex)
             {
+                TempData["error"] = "Algum erro aconteceu - " + ex.Message;
                 return View();
             }
         }

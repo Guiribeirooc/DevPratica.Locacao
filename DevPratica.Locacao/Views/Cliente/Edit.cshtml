@@ -1,0 +1,22 @@
+﻿@model DevPratica.Locacao.Modelo.Cliente
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h4> Editar - Cliente</h4>
+<hr />
+
+<form asp-action="Edit">
+    <input asp-for="DataInclusao" type="hidden" />
+    <input asp-for="DataAlteracao" type="hidden" />
+    <partial name="_Form" />
+</form>
+
+@section scripts {
+    <script type="text/javascript">
+        $(document).ready(function(){
+            document.getElementById("CPF").readOnly = true; 
+        });
+    </script>
+}

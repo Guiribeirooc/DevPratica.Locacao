@@ -40,7 +40,7 @@ namespace DevPratica.Locacao.API.Controllers
         [HttpPut]
         public async Task Put([FromBody] Fornecedor fornecedor)
         {
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
                 await _fornecedorNegocio.Alterar(fornecedor);
         }
     }

@@ -3,51 +3,61 @@
 @{
     ViewData["Title"] = "Index";
 }
-
-<h1>Cadastro</h1>
-
-<p>
-    <a asp-action="Create">Cadastrar Fornecedor</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.CNPJ)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.RazaoSocial)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Telefone)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Email)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.CNPJ)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.RazaoSocial)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Telefone)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<form>
+    <div class="row">
+        <div class="col-md-6">
+            <h4>Lista - Fornecedor</h4>
+        </div>
+        <div class="col-md-6 text-end">
+            <button asp-action="Create" title="Criar registro" class="btn btn-primary btn-sn">
+                <i class="fas fa-plus"></i>
+            </button>
+        </div>
+    </div>
+    <hr />
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.CNPJ)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RazaoSocial)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Telefone)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Email)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CNPJ)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.RazaoSocial)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Telefone)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        <div class="btn-group">
+                            <button asp-action="Edit" asp-route-id="@item.CNPJ" title="Editar registro" class="btn btn-primary btn-sn">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</form>

@@ -17,7 +17,7 @@ namespace DevPratica.Locacao.Modelo
 
         [Required(ErrorMessage = "O telefone é obrigatório.")]
         [StringLength(14, MinimumLength = 14, ErrorMessage = "Este campo deve ter 14 Caracteres.")]
-        public string Telefone { get; set; }
+        public string? Telefone { get; set; }
 
         [StringLength(150, ErrorMessage = "Este campo deve ter no máximo 150 Caracteres.")]
         public string? Email { get; set; } = "";

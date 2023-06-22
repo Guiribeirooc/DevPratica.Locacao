@@ -5,6 +5,11 @@
     {
       "library": "inputmask@5.0.8",
       "destination": "wwwroot/lib/inputmask/"
+    },
+    {
+      "provider": "cdnjs",
+      "library": "font-awesome@6.4.0",
+      "destination": "wwwroot/lib/font-awesome/"
     }
   ]
 }
