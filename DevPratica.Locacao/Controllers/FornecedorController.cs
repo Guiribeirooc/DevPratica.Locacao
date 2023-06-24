@@ -25,8 +25,13 @@ namespace DevPratica.Locacao.Controllers
             _httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
         }
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string mensagem = null, bool sucesso = true)
         {
+            if (sucesso)
+                TempData["success"] = mensagem;
+            else
+                TempData["error"] = mensagem;
+
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", await _apiToken.Obter());
             HttpResponseMessage response = await _httpClient.GetAsync($"{_dadosBase.Value.API_URL_BASE}Fornecedor");
 
@@ -58,21 +63,19 @@ namespace DevPratica.Locacao.Controllers
                     HttpResponseMessage response = await _httpClient.PostAsJsonAsync($"{_dadosBase.Value.API_URL_BASE}Fornecedor", fornecedor);
 
                     if (response.IsSuccessStatusCode)
-                    {
-                        return RedirectToAction(nameof(Index));
-                    }
+                        return RedirectToAction(nameof(Index), new { mensagem = "Cadastro realizado!", sucesso = true });
                     else
-                    {
                         throw new Exception(response.ReasonPhrase);
-                    }
                 }
                 else
                 {
+                    TempData["error"] = "Algum campo está faltando ser preenchido";
                     return View();
                 }
             }
-            catch
+            catch (Exception ex)
             {
+                TempData["error"] = "Algum erro aconteceu - " + ex.Message;
                 return View();
             }
         }
@@ -100,7 +103,7 @@ namespace DevPratica.Locacao.Controllers
                     HttpResponseMessage response = await _httpClient.PutAsJsonAsync($"{_dadosBase.Value.API_URL_BASE}Fornecedor", fornecedor);
 
                     if (response.IsSuccessStatusCode)
-                        return RedirectToAction(nameof(Index), new { mensagem = "Registro Salvo!", sucesso = true });
+                        return RedirectToAction(nameof(Index), new { mensagem = "Alterações feitas com sucesso!", sucesso = true });
                     else
                         throw new Exception(response.ReasonPhrase);
                 }
