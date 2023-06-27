@@ -53,7 +53,7 @@
             <div class="col-md-2">
                 <div class="form-group">
                     <label asp-for="CEP" class="control-label"></label>
-                    <input asp-for="CEP" class="form-control maskCep" />
+                    <input asp-for="CEP" class="form-control maskCep" onblur="pesquisacep(this.value);" />
                     <span asp-validation-for="CEP" class="text-danger"></span>
                 </div>
             </div>
