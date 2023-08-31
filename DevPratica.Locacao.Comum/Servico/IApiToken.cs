@@ -1,4 +1,4 @@
-﻿namespace DevPratica.Locacao.Servico
+﻿namespace DevPratica.Locacao.Comum.Servico
 {
     public interface IApiToken
     {

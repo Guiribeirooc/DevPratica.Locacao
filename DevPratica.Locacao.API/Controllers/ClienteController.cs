@@ -25,10 +25,6 @@ namespace DevPratica.Locacao.API.Controllers
             if (ModelState.IsValid)
             {
                 await _clienteNegocio.Incluir(cliente);
-
-                if(cliente.Email != null)
-                    await EnviarEmail(cliente.Email, cliente.Nome);
-
             }
         }
 
@@ -36,6 +32,12 @@ namespace DevPratica.Locacao.API.Controllers
         public async Task<List<Cliente>> Get()
         {
             return await _clienteNegocio.ObterLista();
+        }
+
+        [HttpGet("ObterListaEmailsNãoEnviados")]
+        public async Task<List<Cliente>> ObterListaEmailsNaoEnviados()
+        {
+            return await _clienteNegocio.ObterListaEmailNaoEnviados();
         }
 
         [HttpGet("ObterPorCPF")]
@@ -51,34 +53,12 @@ namespace DevPratica.Locacao.API.Controllers
                 await _clienteNegocio.Alterar(cliente);      
         }
 
-        private async Task EnviarEmail(string email, string nome)
+        [HttpPut]
+        public async Task EmailEnviado([FromBody] string cpf)
         {
-            MailMessage mensagem = new MailMessage();
-            mensagem.From = new MailAddress("turma2@devpratica.com.br");
-            mensagem.To.Add(email);
-            mensagem.Subject = "Bem=Vindo!!!";
-            mensagem.IsBodyHtml = true;
-            mensagem.Body = EmailBoasVindas(nome);
-
-            var smptCliente = new SmtpClient("smtp.kinghost.net")
-            {
-                Port = 587,
-                Credentials = new NetworkCredential("turma2@devpratica.com.br", "Senha@senha10"),
-                EnableSsl = false,
-            };
-
-            smptCliente.Send(mensagem);
+            if (ModelState.IsValid)
+                await _clienteNegocio.EmailEnviado(cpf);
         }
 
-        private string EmailBoasVindas(string nome)
-        {
-            StringBuilder sb = new StringBuilder();
-            sb.Append($"<p>Parabéns <b>{nome},</b></p>");
-            sb.Append($"<p>Seja muito bem-vindo a <b>G&R Locação.</b></p>");
-            sb.Append($"<p>Estamos muito felizes de você fazer parte da <b>G&R Locação</b></p>");
-            sb.Append($"<br>");
-            sb.Append($"<p>Grande abraço</p>");
-            return sb.ToString();
-        }
     }
 }

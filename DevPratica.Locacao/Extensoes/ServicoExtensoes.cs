@@ -1,6 +1,6 @@
-﻿using DevPratica.Locacao.Modelo.DTO;
-using DevPratica.Locacao.Models;
-using DevPratica.Locacao.Servico;
+﻿using DevPratica.Locacao.Comum.Modelo;
+using DevPratica.Locacao.Comum.Servico;
+using DevPratica.Locacao.Modelo.DTO;
 
 namespace DevPratica.Locacao.Extensoes
 {

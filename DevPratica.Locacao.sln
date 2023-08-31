@@ -13,6 +13,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DevPratica.Locacao.Modelo",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DevPratica.Locacao.Infra", "DevPratica.Locacao.Infra\DevPratica.Locacao.Infra.csproj", "{A4AD66BB-0110-46B2-AFE0-B803CDC4E4F8}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DevPratica.Locacao.Comum", "DevPratica.Locacao.Comum\DevPratica.Locacao.Comum.csproj", "{A870D5DF-BEBD-4C18-A216-D88CE2691792}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DevPratica.Locacao.EnviarEmail", "DevPratica.Locacao.EnviarEmail\DevPratica.Locacao.EnviarEmail.csproj", "{279EEA59-8851-47B4-9189-AF4E6AFC7361}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{A4AD66BB-0110-46B2-AFE0-B803CDC4E4F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A4AD66BB-0110-46B2-AFE0-B803CDC4E4F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A4AD66BB-0110-46B2-AFE0-B803CDC4E4F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A870D5DF-BEBD-4C18-A216-D88CE2691792}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A870D5DF-BEBD-4C18-A216-D88CE2691792}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A870D5DF-BEBD-4C18-A216-D88CE2691792}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A870D5DF-BEBD-4C18-A216-D88CE2691792}.Release|Any CPU.Build.0 = Release|Any CPU
+		{279EEA59-8851-47B4-9189-AF4E6AFC7361}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{279EEA59-8851-47B4-9189-AF4E6AFC7361}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{279EEA59-8851-47B4-9189-AF4E6AFC7361}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{279EEA59-8851-47B4-9189-AF4E6AFC7361}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\DevPratica.Locacao.Comum\DevPratica.Locacao.Comum.csproj" />
     <ProjectReference Include="..\DevPratica.Locacao.Modelo\DevPratica.Locacao.Modelo.csproj" />
   </ItemGroup>
 

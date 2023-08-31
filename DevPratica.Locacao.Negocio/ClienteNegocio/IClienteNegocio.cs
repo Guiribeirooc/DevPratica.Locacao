@@ -8,5 +8,7 @@ namespace DevPratica.Locacao.Negocio.ClienteNegocio
         Task<Cliente> ObterPorCPF(string cpf);
         Task<List<Cliente>> ObterLista();
         Task Alterar(Cliente cliente);
+        Task EmailEnviado(string cpf);
+        Task<List<Cliente>> ObterListaEmailNaoEnviados();
     }
 }

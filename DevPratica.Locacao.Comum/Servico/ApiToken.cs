@@ -1,11 +1,11 @@
-﻿using DevPratica.Locacao.Modelo.DTO;
-using DevPratica.Locacao.Models;
+﻿using DevPratica.Locacao.Comum.Modelo;
+using DevPratica.Locacao.Modelo.DTO;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
 using System.Net.Http.Headers;
-using System.Text.Json.Serialization;
+using System.Net.Http.Json;
 
-namespace DevPratica.Locacao.Servico
+namespace DevPratica.Locacao.Comum.Servico
 {
     public class ApiToken : IApiToken
     {

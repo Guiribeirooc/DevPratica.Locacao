@@ -1,4 +1,4 @@
-﻿namespace DevPratica.Locacao.Models
+﻿namespace DevPratica.Locacao.Comum.Modelo
 {
     public class DadosBase
     {

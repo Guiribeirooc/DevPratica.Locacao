@@ -1,7 +1,6 @@
-﻿using DevPratica.Locacao.Modelo;
-using DevPratica.Locacao.Models;
-using DevPratica.Locacao.Servico;
-using Microsoft.AspNetCore.Http;
+﻿using DevPratica.Locacao.Comum.Modelo;
+using DevPratica.Locacao.Comum.Servico;
+using DevPratica.Locacao.Modelo;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;

@@ -23,11 +23,12 @@ namespace DevPratica.Locacao.Modelo
         public string Celular { get; set; } = "";
 
         [StringLength(150, ErrorMessage = "Este campo deve ter no máximo 150 Caracteres.")]
-        public string? Email { get; set; } = "";
+        public string? Email { get; set; } = ""; 
 
         [Required(ErrorMessage = "A Data de Nascimento é obrigatório.")]
         public DateTime DataNascimento { get; set; }
         public DateTime DataInclusao { get; set; }
         public DateTime? DataAlteracao { get; set; }
+        public bool EmailEnviado { get; set; } = false;
     }
 }
